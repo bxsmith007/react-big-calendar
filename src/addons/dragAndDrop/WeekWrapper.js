@@ -216,15 +216,15 @@ class WeekWrapper extends React.Component {
 
     selector.on('selectStart', () => this.context.draggable.onStart())
     selector.on('select', point => {
-      const bounds = getBoundsForNode(node)
-
+      //const bounds = getBoundsForNode(node)
+      console.log('week select');
       if (!this.state.segment) return
 
-      if (!pointInBox(bounds, point)) {
-        this.reset()
-      } else {
+      // if (!pointInBox(bounds, point)) {
+      //   this.reset()
+      // } else {
         this.handleInteractionEnd()
-      }
+      //}
     })
 
     selector.on('dropFromOutside', point => {
@@ -256,6 +256,7 @@ class WeekWrapper extends React.Component {
   handleInteractionEnd = () => {
     const { resourceId, isAllDay } = this.props
     const { event } = this.state.segment
+    console.log('handleInteractionEnd Week');
 
     this.reset()
 

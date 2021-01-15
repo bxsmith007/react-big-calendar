@@ -184,6 +184,7 @@ class EventContainerWrapper extends React.Component {
     })
 
     selector.on('select', () => {
+      console.log('select');
       isBeingDragged = false
       if (!this.state.event) return
       this.handleInteractionEnd()
@@ -203,6 +204,7 @@ class EventContainerWrapper extends React.Component {
   handleInteractionEnd = () => {
     const { resource } = this.props
     const { event } = this.state
+    console.log('handleInteractionEnd');
 
     this.reset()
 
